@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.siva.entity.Employee;
 import com.siva.service.IEmployeeServiceMngm;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -204,4 +205,32 @@ public class EmployeeController
 	 //return LVN
 	 return "redirect:report";
 	}*/
+	/*
+	@GetMapping("/shutdown")
+	public void shutdownPage()
+	{
+	 System.out.println("EmployeeController.shutdownPage()");
+	 
+	 System.exit(0);
+	}*/
+     
+     @GetMapping("/shutdown")
+     public String shutdownPage(HttpServletRequest request, HttpServletResponse response) {
+         System.out.println("EmployeeController.shutdownPage()");
+         
+         // Render the JSP page
+         new Thread(() -> {
+             try {
+                 // Wait for a few seconds to ensure the page is rendered
+                 Thread.sleep(5000);
+                 System.exit(0); // Gracefully shutdown the application
+             } catch (InterruptedException e) {
+                 e.printStackTrace();
+             }
+         }).start();
+         
+         // Return the JSP view name (assumes `shutdown.jsp` exists in the view folder)
+         return "shutdown";
+     }
+     
 }

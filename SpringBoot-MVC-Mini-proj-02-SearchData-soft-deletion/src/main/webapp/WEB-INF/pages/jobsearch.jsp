@@ -52,11 +52,11 @@ DeptNo :: <frm:select path="deptno">
            <frm:option value="30">30</frm:option>
             <frm:option value="40">40</frm:option>
           </frm:select><br>
- <input class="im" type="image" value="Submit" src="image/search.png" alt="Submit"  />
-<input class="im" type="image" value="Reset" src="image/cancel.jpeg" alt="Reset" />
+ <input class="im" type="image" value="submit" src="image/search.png" alt="Submit"  />
+<input class="im" type="image" value="reset" src="image/cancel.jpeg" alt="Reset" />
 
 </frm:form><br>
-<a href="dysearch"> HordCodding </a> 800 to 3000 between salary Employee Data
+<a href="dysearch"> HordCodding </a>  800 to 3000 between salary Employee Data
 <b><hr></b>
 <%-- <frm:form modelAttribute="emp"  action="dysearch">
      EmpSal From: <frm:input path="salFrom" type="number" /><br>

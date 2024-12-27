@@ -22,6 +22,15 @@ import lombok.RequiredArgsConstructor;
 @Data
 public class EmployeeTo
 {
+	public EmployeeTo
+	(int i, String string, String string2, int j, int k, String string3, int l) {
+		
+	}
+	
+	public EmployeeTo(int i, String string, String string2, int j, int k, LocalDate now, int l) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 //	@SequenceGenerator(name="gen1",sequenceName = "emp_seq_gen",initialValue = 1000,allocationSize = 1)
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gen1")
@@ -40,4 +49,8 @@ public class EmployeeTo
 	private LocalDate hiredata;
 	
 	private Float comm;
+
+	
+	
+	
 }
